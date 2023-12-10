@@ -2,7 +2,10 @@ module github.com/Estavaringo/vai-chover
 
 go 1.21.4
 
-require github.com/labstack/echo/v4 v4.11.3
+require (
+	github.com/a-h/templ v0.2.476
+	github.com/labstack/echo/v4 v4.11.3
+)
 
 require (
 	github.com/golang-jwt/jwt v3.2.2+incompatible // indirect
