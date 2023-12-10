@@ -11,10 +11,14 @@ import (
 
 func main() {
 	e := echo.New()
+
 	e.GET("/", func(c echo.Context) error {
 		component := components.Index()
 		return component.Render(c.Request().Context(), c.Response().Writer)
 	})
+
+	e.Static("/assets", "pkg/assets")
+
 	e.Use(middleware.Logger())
 	e.Logger.Fatal(e.Start(fmt.Sprintf(":%s", os.Getenv("HTTP_PORT"))))
 }
